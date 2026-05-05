@@ -157,7 +157,7 @@ const navLinks = [
   { to: "/about", label: "About Us" },
   { to: "/services", label: "Services" },
   { to: "/products", label: "Products" },
-  { to: "/contact", label: "Contact" },
+  { to: "/gallery", label: "Gallery" },
 ];
 
 function handleScroll() {

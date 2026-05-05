@@ -5,6 +5,7 @@ import AboutPage from "../pages/AboutPage.vue";
 import ServicesPage from "../pages/ServicesPage.vue";
 import ProductsPage from "../pages/ProductsPage.vue";
 import ContactPage from "../pages/ContactPage.vue";
+import Gallery from "../pages/Gallery.vue";
 // import GetQuotePage from "../pages/GetQuotePage.vue";
 
 const routes = [
@@ -13,7 +14,12 @@ const routes = [
   { path: "/services", name: "Services", component: ServicesPage },
   { path: "/products", name: "Products", component: ProductsPage },
   { path: "/contact", name: "Contact", component: ContactPage },
-//   { path: "/get-quote", name: "GetQuote", component: GetQuotePage },
+  {
+    path: "/gallery",
+    name: "Gallery",
+    component: Gallery,
+  },
+  //   { path: "/get-quote", name: "GetQuote", component: GetQuotePage },
 ];
 
 const router = createRouter({
