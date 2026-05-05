@@ -1,15 +1,14 @@
 <script setup>
+import { RouterView } from "vue-router";
 import TheFooter from "./components/layout/TheFooter.vue";
 import TheNavbar from "./components/layout/TheNavbar.vue";
-import X from "./x.vue";
 </script>
 
 <template>
   <TheNavbar />
-  <X />
 
   <main class="min-h-screen">
-    <router-view />
+    <RouterView />
   </main>
 
   <TheFooter />
