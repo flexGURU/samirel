@@ -16,7 +16,7 @@
         <div
           class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
         >
-          <img src="/samirel_logo.png" alt="" />
+          <img src="/logo.png" alt="" />
         </div>
         <div>
           <p
@@ -49,7 +49,7 @@
       <!-- CTA -->
       <div class="hidden lg:flex items-center gap-3">
         <a
-          href="tel:0720-913174 "
+          href="tel:0723383832"
           class="text-sm font-medium text-gray-600 hover:text-blue-700 transition-colors flex items-center gap-1.5"
         >
           <svg
@@ -65,7 +65,7 @@
               d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.948V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
             />
           </svg>
-          0720 913174
+          0723 383832
         </a>
         <!-- <RouterLink to="/get-quote" class="btn-primary text-sm py-2.5 px-5">
           Get a Quote

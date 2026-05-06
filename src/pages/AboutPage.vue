@@ -20,7 +20,7 @@
       <div class="container-max px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-2 gap-16 items-center">
           <div>
-            <SectionHeader eyebrow="Our Story" title="Built on Trust Since 2002" align="left" />
+            <SectionHeader eyebrow="Our Story" title="Built on Trust" align="left" />
             <div class="space-y-4 text-gray-600 leading-relaxed">
               <p>
                 Samirel Insurance Agency was founded in 2002 as a sole proprietorship and duly registered under the Registration of Companies and Business Names Act. In the same year, we obtained our valid practicing license from the Commissioner of Insurance under the Ministry of Finance — a mark of credibility we have maintained to this day.
@@ -95,7 +95,7 @@
               <h3 class="text-xl font-bold text-gray-900 mb-1">M.O. Atong'</h3>
               <p class="text-blue-700 text-sm font-semibold mb-3">Principal Officer & Founder</p>
               <p class="text-gray-500 text-sm leading-relaxed">
-                A College of Insurance graduate (C.O.P. Kenya), Mr. Atong' founded Samirel with the conviction that every Kenyan business and family deserves access to professional, affordable insurance. His hands-on approach and passion for client service have shaped the agency's culture since 2002.
+                A College of Insurance graduate (C.O.P. Kenya), Mr. Atong' founded Samirel with the conviction that every Kenyan business and family deserves access to professional, affordable insurance. His hands-on approach and passion for client service have shaped the agency's culture.
               </p>
             </div>
           </div>

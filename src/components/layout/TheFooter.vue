@@ -11,7 +11,7 @@
               class="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
             >
               <img
-                src="/samirel_logo.png"
+                src="/logo.png"
                 alt="Samirel Logo"
                 class="w-full h-full text-white border rounded-full"
               />
@@ -169,9 +169,10 @@
                   >245744 / 248923</a
                 >
                 <a
-                  href="tel:0720913174"
+                  href="tel:0723383832"
                   class="text-gray-400 hover:text-blue-400 transition-colors block"
-                  >0720-913174</a
+                >
+                  0723-383832</a
                 >
               </div>
             </li>
