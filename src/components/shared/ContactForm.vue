@@ -3,7 +3,9 @@
   <form class="space-y-5" @submit.prevent="handleSubmit" novalidate>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">Full Name <span class="text-red-500">*</span></label>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5"
+          >Full Name <span class="text-red-500">*</span></label
+        >
         <input
           v-model="form.name"
           type="text"
@@ -11,10 +13,14 @@
           class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
           :class="{ 'border-red-400': errors.name }"
         />
-        <p v-if="errors.name" class="text-xs text-red-500 mt-1">{{ errors.name }}</p>
+        <p v-if="errors.name" class="text-xs text-red-500 mt-1">
+          {{ errors.name }}
+        </p>
       </div>
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number <span class="text-red-500">*</span></label>
+        <label class="block text-sm font-medium text-gray-700 mb-1.5"
+          >Phone Number <span class="text-red-500">*</span></label
+        >
         <input
           v-model="form.phone"
           type="tel"
@@ -22,12 +28,16 @@
           class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition"
           :class="{ 'border-red-400': errors.phone }"
         />
-        <p v-if="errors.phone" class="text-xs text-red-500 mt-1">{{ errors.phone }}</p>
+        <p v-if="errors.phone" class="text-xs text-red-500 mt-1">
+          {{ errors.phone }}
+        </p>
       </div>
     </div>
 
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1.5">Email Address</label>
+      <label class="block text-sm font-medium text-gray-700 mb-1.5"
+        >Email Address</label
+      >
       <input
         v-model="form.email"
         type="email"
@@ -37,20 +47,28 @@
     </div>
 
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1.5">Insurance Type <span class="text-red-500">*</span></label>
+      <label class="block text-sm font-medium text-gray-700 mb-1.5"
+        >Insurance Type <span class="text-red-500">*</span></label
+      >
       <select
         v-model="form.type"
         class="w-full rounded-xl border border-gray-200 px-4 py-3 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition bg-white"
         :class="{ 'border-red-400': errors.type }"
       >
         <option value="" disabled>Select insurance type...</option>
-        <option v-for="opt in insuranceTypes" :key="opt" :value="opt">{{ opt }}</option>
+        <option v-for="opt in insuranceTypes" :key="opt" :value="opt">
+          {{ opt }}
+        </option>
       </select>
-      <p v-if="errors.type" class="text-xs text-red-500 mt-1">{{ errors.type }}</p>
+      <p v-if="errors.type" class="text-xs text-red-500 mt-1">
+        {{ errors.type }}
+      </p>
     </div>
 
     <div>
-      <label class="block text-sm font-medium text-gray-700 mb-1.5">Message / Additional Details</label>
+      <label class="block text-sm font-medium text-gray-700 mb-1.5"
+        >Message / Additional Details</label
+      >
       <textarea
         v-model="form.message"
         rows="4"
@@ -66,7 +84,17 @@
     >
       <span v-if="!submitted">{{ submitLabel }}</span>
       <span v-else class="flex items-center gap-2">
-        <svg class="w-5 h-5 text-green-300" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+        <svg
+          class="w-5 h-5 text-green-300"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            fill-rule="evenodd"
+            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+            clip-rule="evenodd"
+          />
+        </svg>
         Submitted! We'll be in touch shortly.
       </span>
     </button>
@@ -74,39 +102,81 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive } from "vue";
+import emailjs from "@emailjs/browser";
+import { useToast } from "vue-toast-notification";
+
+const $toast = useToast();
+const loading = ref(false);
 
 defineProps({
-  submitLabel: { type: String, default: 'Send Message' },
-})
+  submitLabel: { type: String, default: "Send Message" },
+});
 
-const form = reactive({ name: '', phone: '', email: '', type: '', message: '' })
-const errors = reactive({ name: '', phone: '', type: '' })
-const submitted = ref(false)
+const form = reactive({
+  name: "",
+  phone: "",
+  email: "",
+  type: "",
+  message: "",
+});
+const errors = reactive({ name: "", phone: "", type: "" });
+const submitted = ref(false);
 
 const insuranceTypes = [
-  'Motor Insurance',
-  'Medical / Health Insurance',
-  'Life & Pension',
-  'Business Insurance',
-  'Personal Accident',
-  'Domestic Package',
-  'Marine & Goods in Transit',
-  'Travel Insurance',
-  'Premium Financing',
-  'Other',
-]
+  "Motor Insurance",
+  "Medical / Health Insurance",
+  "Life & Pension",
+  "Business Insurance",
+  "Personal Accident",
+  "Domestic Package",
+  "Marine & Goods in Transit",
+  "Travel Insurance",
+  "Premium Financing",
+  "Other",
+];
 
 function validate() {
-  errors.name = form.name.trim() ? '' : 'Full name is required.'
-  errors.phone = form.phone.trim() ? '' : 'Phone number is required.'
-  errors.type = form.type ? '' : 'Please select an insurance type.'
-  return !errors.name && !errors.phone && !errors.type
+  errors.name = form.name.trim() ? "" : "Full name is required.";
+  errors.phone = form.phone.trim() ? "" : "Phone number is required.";
+  errors.type = form.type ? "" : "Please select an insurance type.";
+  return !errors.name && !errors.phone && !errors.type;
 }
-
+const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 function handleSubmit() {
-  if (!validate()) return
-  // In a real project, POST to your backend or emailjs here.
-  submitted.value = true
+  if (!validate()) return;
+
+  submitted.value = true;
+
+  loading.value = true;
+  emailjs.init(publicKey);
+
+  emailjs
+    .send(serviceID, templateID, {
+      name: form.name,
+      phone: form.phone,
+      email: form.email || "N/A",
+      type: form.type,
+      message: form.message || "N/A",
+    })
+    .then(() => {
+      form.name = "";
+      form.phone = "";
+      form.email = "";
+      form.type = "";
+      form.message = "";
+      $toast.success("Message sent successfully!");
+      submitted.value = true;
+    })
+    .catch((error) => {
+      $toast.error("Failed to send message.");
+
+      console.error("EmailJS Error:", error);
+    })
+    .finally(() => {
+      loading.value = false;
+    });
 }
 </script>
