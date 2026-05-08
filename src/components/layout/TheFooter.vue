@@ -164,9 +164,9 @@
               </svg>
               <div class="text-sm">
                 <a
-                  href="tel:245744"
+                  href="tel:0735531198"
                   class="text-gray-400 hover:text-blue-400 transition-colors block"
-                  >245744 / 248923</a
+                  >0735-531198</a
                 >
                 <a
                   href="tel:0723383832"
@@ -191,10 +191,10 @@
                 />
               </svg>
               <a
-                href="mailto:samirelinsuranceagency@yahoo.com"
+                href="mailto:samirelinsurance@gmail.com"
                 class="text-sm text-gray-400 hover:text-blue-400 transition-colors"
               >
-                samirelinsuranceagency@yahoo.com
+                samirelinsurance@gmail.com@yahoo.com
               </a>
             </li>
           </ul>
